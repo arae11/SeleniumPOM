@@ -1,15 +1,10 @@
 ﻿Feature: AP_Cart
-	In order to be able to buy items 
-	As a registered user of the sauce demo website
-	I want to be able to checkout my items
+	Simple calculator for adding two numbers
 
 @cart
-Scenario: Valid login
-	Given I am on the homepage
-	And I enter the following credentials
+Scenario: Go to checkout
+	Given I am on the cart page
 	| Username      | Password     |
 	| standard_user | secret_sauce |
-	And I enter these credentials
-	And I click the login button
-	And I am logged in and sent to the inventory page
-	Then 
+	When I click checkout
+	Then I am taken to the checkout page

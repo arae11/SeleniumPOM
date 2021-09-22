@@ -1,49 +1,41 @@
-﻿using System;
-using TechTalk.SpecFlow;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
-using SeleniumPOMWalkthrough.lib;
-using TechTalk.SpecFlow.Assist;
 using SeleniumPOMWalkthrough.lib.pages;
-using SeleniumPOMWalkthrough.utils;
+using TechTalk.SpecFlow;
 
 namespace SeleniumPOMWalkthrough.BDD
 {
     [Binding]
-    public class AP_InventorySteps
+    [Scope(Feature = "AP_Inventory")]
+    public class AP_InventorySteps : AP_SharedSteps
     {
-        public AP_Website<ChromeDriver> AP_Website { get; } = new AP_Website<ChromeDriver>();
-        private Credentials _credentials;
+        [Given(@"that I have logged in with the following credentials")]
+        public void GivenThatIHaveLoggedInWithTheFollowingCredentials(Table table)
+        {
+            base.GivenIAmOnTheHomepage();
+            base.GivenIEnterTheFollowingCredentials(table);
+            base.WhenIEnterTheseCredentials();
+            base.WhenIClickTheLoginButton();
+            base.ThenIShouldBeLoggedInAndSentToTheInventoryPage();
+        }
 
-        [Given(@"I enter these credentials")]
-        public void GivenIEnterTheseCredentials()
-        {
-            AP_Website.AP_HomePage.InputSigninCredentials(_credentials);
-        }
-        
-        [Given(@"I click the login button")]
-        public void GivenIClickTheLoginButton()
-        {
-            AP_Website.AP_HomePage.ClickLoginButton();
-        }
-        
-        [When(@"I click add to basket")]
-        public void WhenIClickAddToBasket()
+        [When(@"I click add to cart on the backpack")]
+        public void WhenIClickAddToCartOnTheBackpack()
         {
             AP_Website.AP_InventoryPage.ClickAddToCartBackpack();
         }
-        
-        [Then(@"the shopping cart number increases by (.*)")]
-        public void ThenTheShoppingCartNumberIncreasesBy(int p0)
+
+        [Then(@"the shopping cart number increases")]
+        public void ThenTheShoppingCartNumberIncreases()
         {
-            Assert.That(AP_Website.AP_InventoryPage.ShoppingCartNumber, Is.EqualTo("1"));
+            Assert.That(AP_Website.AP_InventoryPage.ShoppingCartNumber, Is.EqualTo("1")); 
         }
 
-        [AfterScenario]
-        public void DisposeWebDriver()
+        [Then(@"I am taken to my cart")]
+        public void ThenIAmTakenToMyCart()
         {
-            AP_Website.SeleniumDriver.Quit();
-            AP_Website.SeleniumDriver.Dispose();
+            var result = AP_Website.AP_InventoryPage.GetHeaderText();
+            Assert.That(result, Does.Contain("YOUR CART"));
         }
     }
 }

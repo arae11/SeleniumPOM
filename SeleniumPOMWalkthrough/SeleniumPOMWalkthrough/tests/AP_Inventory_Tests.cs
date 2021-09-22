@@ -10,7 +10,7 @@
 
 //namespace SeleniumPOMWalkthrough.tests
 //{
-//    public class AP_UserPortal_Tests
+//    public class AP_Inventory_Tests
 //    {
 //        public AP_Website<ChromeDriver> AP_Website = new AP_Website<ChromeDriver>();
 

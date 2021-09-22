@@ -10,5 +10,7 @@ namespace SeleniumPOMWalkthrough
         public static readonly string InventoryPageURL = ConfigurationManager.AppSettings["inventorypage_url"];
         public static readonly string CartPageURL = ConfigurationManager.AppSettings["cartpage_url"];
         public static readonly string CheckoutOnePageURL = ConfigurationManager.AppSettings["checkoutonepage_url"];
+        public static readonly string CheckoutTwoPageURL = ConfigurationManager.AppSettings["checkouttwopage_url"];
+        public static readonly string CheckoutCompletePageURL = ConfigurationManager.AppSettings["checkoutcompletepage_url"];
     }
 }

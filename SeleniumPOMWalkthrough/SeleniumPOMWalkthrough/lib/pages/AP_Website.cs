@@ -18,6 +18,8 @@ namespace SeleniumPOMWalkthrough.lib.pages
         public AP_InventoryPage AP_InventoryPage { get; set; }
         public AP_CartPage AP_CartPage { get; set; }
         public AP_CheckoutStepOnePage AP_CheckoutStepOnePage { get; set; }
+        public AP_CheckoutStepTwoPage AP_CheckoutStepTwoPage { get; set; }
+        public AP_CheckoutCompletePage AP_CheckoutCompletePage { get; set; }
         #endregion
 
         // Constructor for driver and config for the service
@@ -31,6 +33,8 @@ namespace SeleniumPOMWalkthrough.lib.pages
             AP_InventoryPage = new AP_InventoryPage(SeleniumDriver);
             AP_CartPage = new AP_CartPage(SeleniumDriver);
             AP_CheckoutStepOnePage = new AP_CheckoutStepOnePage(SeleniumDriver);
+            AP_CheckoutStepTwoPage = new AP_CheckoutStepTwoPage(SeleniumDriver);
+            AP_CheckoutCompletePage = new AP_CheckoutCompletePage(SeleniumDriver);
         }
 
         // Delete cookies
