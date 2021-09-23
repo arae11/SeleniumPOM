@@ -24,5 +24,11 @@ namespace SeleniumPOMWalkthrough.BDD
         {
             Assert.That(AP_Website.SeleniumDriver.Url, Does.Contain("checkout-step-one"));
         }
+
+        [When(@"I click continue shopping")]
+        public void WhenIClickContinueShopping()
+        {
+            AP_Website.AP_CartPage.ClickContinueShopping();
+        }
     }
 }

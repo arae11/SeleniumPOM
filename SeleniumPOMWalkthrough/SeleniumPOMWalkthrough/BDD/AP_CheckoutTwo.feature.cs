@@ -20,22 +20,23 @@ namespace SeleniumPOMWalkthrough.BDD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AP_Inventory")]
-    public partial class AP_InventoryFeature
+    [NUnit.Framework.DescriptionAttribute("AP_CheckoutTwo")]
+    public partial class AP_CheckoutTwoFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "AP_Inventory.feature"
+#line 1 "AP_CheckoutTwo.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD", "AP_Inventory", "\tSimple calculator for adding two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD", "AP_CheckoutTwo", "\tIn order to be able to buy items \r\n\tAs a registered user of the sauce demo websi" +
+                    "te\r\n\tI want to be able to view the checkout overview before I am finished", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,15 +75,17 @@ namespace SeleniumPOMWalkthrough.BDD
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Go to my cart")]
-        [NUnit.Framework.CategoryAttribute("Inventory")]
-        public virtual void GoToMyCart()
+        [NUnit.Framework.DescriptionAttribute("Complete order")]
+        [NUnit.Framework.CategoryAttribute("checkouttwo")]
+        [NUnit.Framework.CategoryAttribute("happy")]
+        public virtual void CompleteOrder()
         {
             string[] tagsOfScenario = new string[] {
-                    "Inventory"};
+                    "checkouttwo",
+                    "happy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Go to my cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Complete order", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,35 +105,48 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table26.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
-#line 6
- testRunner.Given("that I have logged in", ((string)(null)), table26, "Given ");
+#line 8
+ testRunner.Given("I am on the second checkout page", ((string)(null)), table22, "Given ");
 #line hidden
-#line 9
- testRunner.When("I click the shopping cart button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table23.AddRow(new string[] {
+                            "Alex",
+                            "Rae",
+                            "SL5"});
+#line 11
+ testRunner.And("I input this checkout information", ((string)(null)), table23, "And ");
 #line hidden
-#line 10
- testRunner.Then("I am taken to my cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.When("I click finish", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
+ testRunner.Then("I should be taken to the checkout completed page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add item to cart")]
-        [NUnit.Framework.CategoryAttribute("Inventory")]
-        public virtual void AddItemToCart()
+        [NUnit.Framework.DescriptionAttribute("Cancel order")]
+        [NUnit.Framework.CategoryAttribute("checkouttwo")]
+        [NUnit.Framework.CategoryAttribute("happy")]
+        public virtual void CancelOrder()
         {
             string[] tagsOfScenario = new string[] {
-                    "Inventory"};
+                    "checkouttwo",
+                    "happy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add item to cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel order", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -150,20 +166,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table27.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
-#line 14
- testRunner.Given("that I have logged in", ((string)(null)), table27, "Given ");
+#line 19
+ testRunner.Given("I am on the second checkout page", ((string)(null)), table24, "Given ");
 #line hidden
-#line 17
- testRunner.When("I click add to cart on the backpack", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table25.AddRow(new string[] {
+                            "Alex",
+                            "Rae",
+                            "SL5"});
+#line 22
+ testRunner.And("I input this checkout information", ((string)(null)), table25, "And ");
 #line hidden
-#line 18
- testRunner.Then("the shopping cart number increases", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("I click the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 26
+ testRunner.Then("I am taken to the products page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

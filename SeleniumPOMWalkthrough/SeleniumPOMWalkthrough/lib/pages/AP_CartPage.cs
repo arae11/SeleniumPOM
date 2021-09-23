@@ -14,9 +14,11 @@ namespace SeleniumPOMWalkthrough.lib.pages
         private IWebElement _continueShoppingButton => _seleniumDriver.FindElement(By.Id("continue-shopping"));
         private IWebElement _removeBackpack => _seleniumDriver.FindElement(By.Id("remove-sauce-labs-backpack"));
         private IWebElement _checkoutButton => _seleniumDriver.FindElement(By.Id("checkout"));
+        private IWebElement _header => _seleniumDriver.FindElement(By.Id("header_container"));
 
         public AP_CartPage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
+        public string GetHeaderText() => _header.Text;
         public void ClickContinueShopping() => _continueShoppingButton.Click();
         public string RemoveItemBackpack() => _removeBackpack.Text;
         public void ClickCheckout() => _checkoutButton.Click();

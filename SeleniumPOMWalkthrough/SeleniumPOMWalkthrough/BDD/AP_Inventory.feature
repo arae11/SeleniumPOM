@@ -3,7 +3,7 @@
 
 @Inventory
 Scenario: Go to my cart
-	Given that I have logged in with the following credentials
+	Given that I have logged in
 	| Username      | Password     |
 	| standard_user | secret_sauce |
 	When I click the shopping cart button
@@ -11,7 +11,7 @@ Scenario: Go to my cart
 
 @Inventory
 Scenario: Add item to cart
-	Given that I have logged in with the following credentials
+	Given that I have logged in
 	| Username      | Password     |
 	| standard_user | secret_sauce |
 	When I click add to cart on the backpack

@@ -13,16 +13,15 @@ namespace SeleniumPOMWalkthrough.lib.pages
     public class AP_CheckoutCompletePage
     {
         private IWebDriver _seleniumDriver;
-        private string _checkoutcompletepage_url = AppConfigReader.CheckoutCompletePageURL;
+        private string _checkoutCompletePageUrl = AppConfigReader.CheckoutCompletePageURL;
 
         private IWebElement _homeButton => _seleniumDriver.FindElement(By.Id("back-to-products"));
         private IWebElement _header => _seleniumDriver.FindElement(By.Id("header_container"));
 
         public AP_CheckoutCompletePage(IWebDriver seleniumDriver) => _seleniumDriver = seleniumDriver;
 
+        public void GoToCheckoutCompletePage() => _seleniumDriver.Navigate().GoToUrl(_checkoutCompletePageUrl);
         public void ClickHomeButton() => _homeButton.Click();
         public string GetHeaderText() => _header.Text;
-
-        //Checkout: Complete!
     }
 }

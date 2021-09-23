@@ -107,10 +107,13 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="BDD\AP_CartSteps.cs" />
+    <Compile Include="BDD\AP_CheckoutCompleteSteps.cs" />
     <Compile Include="BDD\AP_CheckoutOneSteps.cs" />
+    <Compile Include="BDD\AP_CheckoutTwoSteps.cs" />
     <Compile Include="BDD\AP_InventorySteps.cs" />
     <Compile Include="BDD\AP_SharedSteps.cs" />
     <Compile Include="BDD\AP_SigninSteps.cs" />
+    <Compile Include="BDD\UserJourney1Steps.cs" />
     <Compile Include="lib\driver_config\SeleniumDriverConfig.cs" />
     <Compile Include="lib\pages\AP_CartPage.cs" />
     <Compile Include="lib\pages\AP_CheckoutCompletePage.cs" />
@@ -129,9 +132,13 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="BDD\AP_Cart.feature" />
+    <None Include="BDD\AP_CheckoutComplete.feature" />
     <None Include="BDD\AP_CheckoutOne.feature" />
+    <None Include="BDD\AP_CheckoutTwo.feature" />
     <None Include="BDD\AP_Inventory.feature" />
     <None Include="BDD\AP_Signin.feature" />
+    <None Include="BDD\UserJourney1.feature" />
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

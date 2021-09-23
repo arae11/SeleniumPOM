@@ -9,23 +9,22 @@ namespace SeleniumPOMWalkthrough.BDD
     [Scope(Feature = "AP_CheckoutOne")]
     public class AP_CheckoutOneSteps : AP_SharedSteps
     {
-        [Given(@"I am on the first checkout page")]
-        public void GivenIAmOnTheFirstCheckoutPage(Table table)
+        [When(@"I click the cancel button")]
+        public void WhenIClickTheCancelButton()
         {
-            base.GivenIAmOnTheHomepage();
-            base.GivenIEnterTheFollowingCredentials(table);
-            base.WhenIEnterTheseCredentials();
-            base.WhenIClickTheLoginButton();
-            base.WhenIClickTheShoppingCartButton();
-            base.WhenIClickCheckout();
+            AP_Website.AP_CheckoutStepOnePage.ClickCancelButton();
         }
-        
-        [When(@"I click the continue button")]
-        public void WhenIClickTheContinueButton()
+
+        [Then(@"I should see an alert containing the error message ""(.*)""")]
+        public void ThenIShouldSeeAnAlertContainingTheErrorMessage(string expected)
         {
-            AP_Website.AP_CheckoutStepOnePage.ClickContinueButton();
+            Assert.That(AP_Website.AP_CheckoutStepOnePage.GetErrorMessage(), Does.Contain(expected));
         }
-        
-        
+
+        [Then(@"I am taken to the checkout step two page")]
+        public void ThenIAmTakenToTheCheckoutStepTwoPage()
+        {
+            Assert.That(AP_Website.AP_CheckoutStepTwoPage.GetHeaderText(), Does.Contain("CHECKOUT: OVERVIEW"));
+        }
     }
 }

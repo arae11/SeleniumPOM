@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeleniumPOMWalkthrough.utils
 {
-    class CheckoutInformation
+    public class CheckoutInformation
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumPOMWalkthrough.lib.pages;
+using SeleniumPOMWalkthrough.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,5 @@ namespace SeleniumPOMWalkthrough.lib.pages
         public void ClickCancelButton() => _cancelButton.Click();
         public void ClickFinishButton() => _finishButton.Click();
         public string GetHeaderText() => _header.Text;
-
-        //Checkout: Overview
     }
 }

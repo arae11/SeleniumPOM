@@ -11,7 +11,7 @@ Scenario: Valid login
 	| standard_user | secret_sauce |
 	When I enter these credentials
 	And I click the login button
-	Then I should be logged in and sent to the inventory page
+	Then I am taken to the products page
 
 @login
 Scenario: No username or password

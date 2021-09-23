@@ -76,11 +76,13 @@ namespace SeleniumPOMWalkthrough.BDD
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid checkout fields")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("happy")]
         public virtual void ValidCheckoutFields()
         {
             string[] tagsOfScenario = new string[] {
-                    "mytag"};
+                    "checkoutone",
+                    "happy"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid checkout fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
@@ -103,31 +105,513 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
 #line 8
- testRunner.Given("I am on the first checkout page", ((string)(null)), table2, "Given ");
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table5, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "PostalCode"});
-                table3.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "Alex",
                             "Rae",
                             "SL5"});
 #line 11
- testRunner.When("I enter valid checkout information", ((string)(null)), table3, "When ");
+ testRunner.When("I enter the following checkout information", ((string)(null)), table6, "When ");
 #line hidden
 #line 14
  testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
- testRunner.Then("I should be taken to the checkout step two page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I am taken to the checkout step two page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("No checkout fields completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void NoCheckoutFieldsCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No checkout fields completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 18
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table7.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 19
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table7, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table8.AddRow(new string[] {
+                            "",
+                            "",
+                            ""});
+#line 22
+ testRunner.When("I enter the following checkout information", ((string)(null)), table8, "When ");
+#line hidden
+#line 25
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+ testRunner.Then("I should see an alert containing the error message \"Error: First Name is required" +
+                        "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only firstname field completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyFirstnameFieldCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only firstname field completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table9.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 30
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table9, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table10.AddRow(new string[] {
+                            "Alex",
+                            "",
+                            ""});
+#line 33
+ testRunner.When("I enter the following checkout information", ((string)(null)), table10, "When ");
+#line hidden
+#line 36
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.Then("I should see an alert containing the error message \"Error: Last Name is required\"" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only name fields completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyNameFieldsCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only name fields completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table11.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 41
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table11, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table12.AddRow(new string[] {
+                            "Alex",
+                            "Rae",
+                            ""});
+#line 44
+ testRunner.When("I enter the following checkout information", ((string)(null)), table12, "When ");
+#line hidden
+#line 47
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
+ testRunner.Then("I should see an alert containing the error message \"Error: Postal Code is require" +
+                        "d\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only postcode field completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyPostcodeFieldCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only postcode field completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 51
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table13.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 52
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table13, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table14.AddRow(new string[] {
+                            "",
+                            "",
+                            "SL5"});
+#line 55
+ testRunner.When("I enter the following checkout information", ((string)(null)), table14, "When ");
+#line hidden
+#line 58
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 59
+ testRunner.Then("I should see an alert containing the error message \"Error: First Name is required" +
+                        "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only lastname field completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyLastnameFieldCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only lastname field completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 62
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table15.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 63
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table15, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table16.AddRow(new string[] {
+                            "",
+                            "Rae",
+                            ""});
+#line 66
+ testRunner.When("I enter the following checkout information", ((string)(null)), table16, "When ");
+#line hidden
+#line 69
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.Then("I should see an alert containing the error message \"Error: First Name is required" +
+                        "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only postcode and firstname fields completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyPostcodeAndFirstnameFieldsCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only postcode and firstname fields completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table17.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 74
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table17, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table18.AddRow(new string[] {
+                            "Alex",
+                            "",
+                            "SL5"});
+#line 77
+ testRunner.When("I enter the following checkout information", ((string)(null)), table18, "When ");
+#line hidden
+#line 80
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+ testRunner.Then("I should see an alert containing the error message \"Error: Last Name is required\"" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only postcode and lastname fields completed")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        [NUnit.Framework.CategoryAttribute("sad")]
+        public virtual void OnlyPostcodeAndLastnameFieldsCompleted()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone",
+                    "sad"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only postcode and lastname fields completed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table19.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 85
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table19, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "PostalCode"});
+                table20.AddRow(new string[] {
+                            "",
+                            "Rae",
+                            "SL5"});
+#line 88
+ testRunner.When("I enter the following checkout information", ((string)(null)), table20, "When ");
+#line hidden
+#line 91
+ testRunner.And("I click the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 92
+ testRunner.Then("I should see an alert containing the error message \"Error: First Name is required" +
+                        "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Go back to cart")]
+        [NUnit.Framework.CategoryAttribute("checkoutone")]
+        public virtual void GoBackToCart()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkoutone"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Go back to cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 95
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Username",
+                            "Password"});
+                table21.AddRow(new string[] {
+                            "standard_user",
+                            "secret_sauce"});
+#line 96
+ testRunner.Given("I am on the first checkout page", ((string)(null)), table21, "Given ");
+#line hidden
+#line 99
+ testRunner.When("I click the cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 100
+ testRunner.Then("I am taken to my cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
