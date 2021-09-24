@@ -33,15 +33,15 @@ In addition to this, LivingDoc's was used in collaboration with SpecFlow to prov
 
 ## What I tested
 
-Selenium was used as the web driver to capture and record steps taken in the browser. This automatic tool allowed for the use of NUnit to test the steps taken to create a comprehensive test suite. In addition to this, the project was conducted in a BDD (Behaviour Driven Development) approach utilising SpecFlow. This framework allows you to create Gherkin syntax scripts that can be converted into NUnit tests. Each page on the sauce demo website was tested. This involved implementing a design pattern in Selenium called the Page Object Model. This required separating each page into its own object through the creation of a class page. Each class page contained elements of the website which were interacting with selenium as a result of the Gherkin syntax which was directing the web driver. This created individual tests for each instruction in each scenario.
+Selenium was used as the web driver to capture and record steps taken in the browser. This automatic tool allowed for the use of NUnit to test  the steps taken to create a comprehensive test suite. In addition to  this, the project was conducted in a BDD (Behaviour Driven Development)  approach utilising SpecFlow. This framework allows you to create Gherkin syntax scripts that can be converted into NUnit tests. Each page on the sauce demo website was tested. This involved implementing a design pattern in Selenium called the Page Object Model. This required separating each page into its own object through the creation of a class page. Each class page contained elements of the website which were interacting with selenium as a result of the Gherkin syntax which was directing the web driver. This created individual tests for each  instruction in each scenario.
 
 In order to keep the code dry I implemented a base class called `AP_SharedSteps` which contained all the methods which could occur more than once. Every subsequent step class would inherit this information, reducing the amount of duplicate code. In order to keep the code damp each method was named appropriately.
 
+
+
 ## User Journeys
 
-As the website being tested on was very basic there were not many user journeys that I could have created. I decided on using the most common one which would be purchasing an item in the store, in this particular journey the item was a backpack.
-
-User Journey:
+### User Journey 1:
 
 > As a registered user of the sauce demo website
 > I want to be able to purchase a sauce labs backpack
@@ -50,21 +50,102 @@ User Journey:
 Gherkin Syntax:
 
 > ```c#
-> Given that I have logged in
-> 	| Username      | Password     |
-> 	| standard_user | secret_sauce |
-> When I click add to cart on the backpack
-> And I click the shopping cart button
-> And I click checkout
-> And I enter the following checkout information
-> 	| FirstName | LastName | PostalCode |
-> 	| Alex      | Rae      | SL5        |
-> And I click the continue button
-> And I click finish
-> Then I should be taken to the checkout completed page
+> Scenario: Purchase backpack user journey
+> 	Given that I have logged in
+> 		| Username      | Password     |
+> 		| standard_user | secret_sauce |
+> 	When I click add to cart on the backpack
+> 	And I click the shopping cart button
+> 	And I click checkout
+> 	And I enter the following checkout information
+> 		| FirstName | LastName | PostalCode |
+> 		| Alex      | Rae      | SL5        |
+> 	And I click the continue button
+> 	And I click finish
+> 	Then I should be taken to the checkout completed page
 > ```
 
 As I had already implemented these scenarios in previous testing, all the code is located in the `SharedSteps` class.
+
+
+
+### User Journey 2:
+
+> As a registered user of the sauce demo website
+> I want to be able to purchase all sauce labs merchandise
+> So that I can waste all my money
+
+Gherkin Syntax:
+
+> ```c#
+> Scenario: Purchase all items user journey
+> 	Given that I have logged in
+> 		| Username      | Password     |
+> 		| standard_user | secret_sauce |
+> 	When I click add to cart on all items
+> 	And I click the shopping cart button
+> 	And I click checkout
+> 	And I enter the following checkout information
+> 		| FirstName | LastName | PostalCode |
+> 		| Alex      | Rae      | SL5        |
+> 	And I click the continue button
+> 	And I click finish
+> 	Then I should be taken to the checkout completed page
+> ```
+
+
+
+### User Journey 3:
+
+> As a registered user of the sauce demo website
+> I want to be able to purchase all sauce labs merchandise except for the backpack
+> So that I can waste all my money but save a little bit
+
+Gherkin Syntax:
+
+> ```c#
+> Scenario: Purchase all items but remove backpack user journey
+> 	Given that I have logged in
+> 	| Username      | Password     |
+> 	| standard_user | secret_sauce |
+> 	When I click add to cart on all items
+> 	And I click the shopping cart button
+> 	And I click remove on the backpack
+> 	And I click checkout
+> 	And I enter the following checkout information
+> 	| FirstName | LastName | PostalCode |
+> 	| Alex      | Rae      | SL5        |
+> 	And I click the continue button
+> 	And I click finish
+> 	Then I should be taken to the checkout completed page
+> ```
+
+
+
+### User Journey 4:
+
+> As a registered user of the sauce demo website
+> I want to be able to purchase sort items by price and purchase the cheapest item
+> So that I can save money on sauce labs merchandise
+
+Gherkin Syntax:
+
+> ```c#
+> Scenario: Sort all items by price and purchase the cheapest item
+> 	Given that I have logged in
+> 	| Username      | Password     |
+> 	| standard_user | secret_sauce |
+> 	When I sort the items by price (low to high)
+> 	And I click add to cart on the cheapest item
+> 	And I click the shopping cart button
+> 	And I click checkout
+> 	And I enter the following checkout information
+> 	| FirstName | LastName | PostalCode |
+> 	| Alex      | Rae      | SL5        |
+> 	And I click the continue button
+> 	And I click finish
+> 	Then I should be taken to the checkout completed page
+> ```
 
 
 
@@ -72,11 +153,13 @@ As I had already implemented these scenarios in previous testing, all the code i
 
 ![class diagram](https://user-images.githubusercontent.com/60930006/134529637-0e40c570-acd4-4747-a27c-55ed0dc86318.png)
 
-## 
+
 
 ## LivingDoc's
 
-![livingdoc](https://user-images.githubusercontent.com/60930006/134525914-f0e5da9e-9498-4394-b318-ef9b9960c5d9.png)
+![livingdoc1](https://user-images.githubusercontent.com/60930006/134682132-3be87e0d-7a55-4127-a3fd-f897b54e2eed.png)
+
+![livingdoc2](https://user-images.githubusercontent.com/60930006/134682409-bca936cc-0dd9-4e6d-a1e0-2f6c4855e546.png)
 
 
 
