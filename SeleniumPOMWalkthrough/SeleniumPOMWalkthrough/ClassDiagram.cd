@@ -12,12 +12,12 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>ABAQQIAGABIAoAAAAAAgAAAACAACEBgAAEBgABAAAIQ=</HashCode>
+      <HashCode>ABAQQIAGABIAoAAAAAAgQAAACAACEBgAAEBgABAAAIQ=</HashCode>
       <FileName>BDD\AP_SharedSteps.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_checkoutInfo" />
       <Field Name="_credentials" />
+      <Field Name="_checkoutInfo" />
       <Property Name="AP_Website" />
     </ShowAsAssociation>
   </Class>
@@ -25,8 +25,8 @@
     <Position X="10.75" Y="0.75" Width="1.5" />
     <InheritanceLine Type="SeleniumPOMWalkthrough.BDD.AP_SharedSteps" FixedFromPoint="true">
       <Path>
-        <Point X="10.25" Y="1.534" />
-        <Point X="10.49" Y="1.534" />
+        <Point X="10.25" Y="1.546" />
+        <Point X="10.49" Y="1.546" />
         <Point X="10.49" Y="1.096" />
         <Point X="10.75" Y="1.096" />
       </Path>
@@ -61,8 +61,8 @@
     <Position X="10.75" Y="5.75" Width="1.5" />
     <InheritanceLine Type="SeleniumPOMWalkthrough.BDD.AP_SharedSteps" FixedFromPoint="true">
       <Path>
-        <Point X="10.25" Y="5.562" />
-        <Point X="10.49" Y="5.562" />
+        <Point X="10.25" Y="5.744" />
+        <Point X="10.49" Y="5.744" />
         <Point X="10.49" Y="6.096" />
         <Point X="10.75" Y="6.096" />
       </Path>
@@ -82,7 +82,7 @@
   <Class Name="SeleniumPOMWalkthrough.lib.pages.AP_InventoryPage" Collapsed="true">
     <Position X="4.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAQCABACACAEACABAYCAAAAgAkAAEABAAAIAABAAA=</HashCode>
+      <HashCode>AAIAQCABACACAEACABAYCAAAAgAkIAEABAAAIAABAAA=</HashCode>
       <FileName>lib\pages\AP_InventoryPage.cs</FileName>
     </TypeIdentifier>
   </Class>

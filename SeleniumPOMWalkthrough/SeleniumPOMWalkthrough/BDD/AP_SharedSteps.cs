@@ -110,6 +110,12 @@ namespace SeleniumPOMWalkthrough.BDD
             AP_Website.AP_InventoryPage.ClickShoppingCartButton();
         }
 
+        [When(@"I click add to cart on all items")]
+        public void WhenIClickAddToCartOnAllItems()
+        {
+            AP_Website.AP_InventoryPage.AddAllItems();
+        }
+
         [When(@"I click finish")]
         public void WhenIClickFinish()
         {
